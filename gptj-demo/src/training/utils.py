@@ -7,7 +7,7 @@ import optax
 from jax import numpy as jnp
 from optax._src import base
 
-from trix.types import RNGKey, Tokens
+from src.types import RNGKey, Tokens
 
 
 def split_sequences(

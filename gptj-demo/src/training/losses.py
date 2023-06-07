@@ -4,7 +4,7 @@ import haiku as hk
 import jax
 import jax.numpy as jnp
 
-from trix.types import (
+from src.types import (
     AttentionMask,
     Dict,
     Labels,

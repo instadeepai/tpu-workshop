@@ -18,7 +18,7 @@ GPTJ_MODEL_NAME = "gpt_j_decoder"
 
 
 def translate_torch_params(
-    torch_params: torch.nn.ParameterDict, num_layers: int = 28,
+    torch_params: torch.nn.ParameterDict, num_layers: int = 28, dtype: jnp.dtype = jnp.float32,
 ) -> Dict[str, Dict[str, np.ndarray]]:
     """
     Converts the full Hugging Face PyTorch gptj model to Haiku parameters.
@@ -113,9 +113,9 @@ def translate_torch_params(
         if "weight" in torch_key and not ("wte" in torch_key):
             # in pytorch, the weights of dense matrices indexation is transposes
             # compared to haiku, except for word-token-embedding
-            params[trix_key][weight_key] = np.array(torch_params[torch_key]).transpose()
+            params[trix_key][weight_key] = jnp.array(torch_params[torch_key], dtype=dtype).transpose()
         else:
-            params[trix_key][weight_key] = np.array(torch_params[torch_key])
+            params[trix_key][weight_key] = jnp.array(torch_params[torch_key], dtype=dtype)
 
     return dict(params)
 

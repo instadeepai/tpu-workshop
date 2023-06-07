@@ -8,8 +8,8 @@ import jax
 import jax.numpy as jnp
 import optax
 
-from trix.types import Metrics
-from trix.utils.parameters import load_params, save_params
+from src.types import Metrics
+from src.utils.parameters import load_params, save_params
 
 
 class TrainingState(NamedTuple):
