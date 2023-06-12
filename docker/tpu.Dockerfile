@@ -39,3 +39,7 @@ RUN apt install -y curl unzip aria2 wget
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
 RUN ./aws/install
+
+RUN mkdir /usr/share/grpc/
+RUN curl -Lo roots.pem https://pki.google.com/roots.pem
+RUN mv roots.pem /usr/share/grpc/roots.pem
