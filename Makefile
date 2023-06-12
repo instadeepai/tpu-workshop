@@ -5,18 +5,20 @@
 GIT_BRANCH=add_vm
 
 # The following variables are assumed to already exist as environment variables locally, or can be edited below.
-ACCOUNT=#TODO, e.g. j.smith@google.com
+#ACCOUNT=$(GITHUB_ACCESS_TOKEN)
+ACCOUNT=t.barrett@instadeep.com
 
-PORT=8889
+PORT=8890
 
 #######
 # TPU #
 #######
 
 BASE_CMD=gcloud alpha compute tpus tpu-vm
-NAME=tpu-workshop-$(ACCELERATOR_TYPE)-tb
-PROJECT=#TODO
-ZONE=#TODO
+#NAME=tpu-workshop-$(ACCELERATOR_TYPE)-tb
+NAME=isaax-$(ACCELERATOR_TYPE)
+PROJECT=research-294715
+ZONE=europe-west4-a
 ACCELERATOR_TYPE=v3-8
 
 WORKER=all
