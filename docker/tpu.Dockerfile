@@ -34,3 +34,8 @@ RUN pip install --user -e ./gptj-demo
 FROM test-image as run-image
 # The run-image (default) is the same as the dev-image with the some files directly
 # copied inside
+RUN apt update
+RUN apt install -y curl unzip aria2 wget
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
