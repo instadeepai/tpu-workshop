@@ -7,7 +7,7 @@ GIT_BRANCH=add_vm
 # The following variables are assumed to already exist as environment variables locally, or can be edited below.
 ACCOUNT=#TODO, e.g. j.smith@google.com
 
-PORT=8890
+PORT=8889
 
 #######
 # TPU #
